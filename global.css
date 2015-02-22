@@ -354,11 +354,11 @@ p.community {margin: 5px 0px;}
 
 /*--------------- MAP PAGE Links of interest ---------------*/ 
 
-#orange {color: #C04E18;}
-#maroon {color: #B21B3B;}
-#purple {color: #4D2898;}
-#green {color: #296916}
-#yellow {color: #B0AB03;}
+#orange {color: #C04E18; font-weight: bold;}
+#maroon {color: #27686A; font-weight: bold;}
+#purple {color: #4D2898; font-weight: bold;}
+#green {color: #296916; font-weight: bold;}
+#yellow {color: #B0AB03; font-weight: bold;}
 #blue {color:#031B51;}
 .pane-block-7 .pane-title{font-size:20px;}
 .pane-block-7{border:1px solid #CAC5BB;background:none repeat scroll 0 0 #ECE7DE;margin:10px;padding:10px;}
