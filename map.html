@@ -10,13 +10,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Patient Charge Cards</title>
+    <title>PICU Map</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    <link href="map.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -43,48 +43,18 @@
           </button>
           <a class="navbar-brand" href="map.html">PICU Map</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Red Team</a></li>
-            <li><a href="#about">Green Team</a></li>
-            <li><a href="#contact">Purple Team</a></li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li> -->
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1></h1>
-      </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body > .container</code>.</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
-      <button type="button" class="btn btn-default" aria-label="Left Arrow" id = "left">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </button>
-      <button type="button" class="btn btn-default" aria-label="Right Arrow" id = "right">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      </button>
+          <div class="switch" id="lock">
+            <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+            <label for="cmn-toggle-7" data-on="Locked" data-off="Edit"></label>
+          </div>
     </div>
-
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Links To Different Patient Rooms Would Go Here</p>
-      </div>
-    </footer>
+    </div>
 
 
     <!-- Bootstrap core JavaScript
