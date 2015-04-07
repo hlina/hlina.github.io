@@ -124,3 +124,106 @@ input.cmn-toggle-yes-no:checked + label:after {
   -o-transform: rotateY(0);
   transform: rotateY(0);
 }
+
+#drop-target-one {
+  position: fixed;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: -10px;
+}
+
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+h2 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+
+.drag, .list {
+  width: 150px;
+}
+
+.drag {
+  z-index: 100;
+  position:absolute;
+  opacity: .50;
+  filter: alpha(opacity=50);
+}
+
+.list {
+  position:relative;
+  z-index: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  top: 0px;
+  left: 0px;
+}
+
+/*Drag and Drop*/
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+
+/* Demo One */
+/*#drop-target-one,
+#dd-files,
+#dd-images {
+  border: 5px dashed #D9D9D9;
+  border-radius: 10px;
+  padding: 5em 2em;
+  text-align: center;
+}*/
+
+.over {
+  background: #F7F7F7;
+}
+
+#drag-elements {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+}
+
+#drag-elements li {
+/*  display: inline-block;
+*/
+  width: 15%;
+  padding: 0.5em 1em;
+  margin: 0 1em 1em 0;
+  border: 1px solid #D9D9D9;
+  background: #F7F7F7;
+  border-radius: 3px;
+}
+
+/* Clearfix Utils */
+
+.clearfix {
+  *zoom: 1; }
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
