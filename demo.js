@@ -60,7 +60,7 @@ window.onload = function() {
 		var elem = document.createElement("img");
 		elem.setAttribute("height", "600");
 		elem.setAttribute("width", "650");
-		elem.src = "PICU.png";
+		elem.src = "PICUAssign.jpg";
 		elem.id = "drop-target-one";
 		parent.appendChild(elem);
 		return false;

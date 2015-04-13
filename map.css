@@ -227,3 +227,13 @@ h2 span {
 .clearfix:after {
   clear: both; }
 
+#zoom1 {
+  float: right;
+  margin-left: -30px;
+}
+
+#zoom2{
+  float: right;
+  position: relative;
+  margin-top: 35px;
+}
