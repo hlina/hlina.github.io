@@ -48,3 +48,9 @@ code {
 #card {
   margin-left: 55px;
 }
+#unassign {
+  position: relative;
+  float: right;
+  margin-right: 150px;
+  margin-top: -35px;
+}
