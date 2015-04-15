@@ -237,3 +237,6 @@ h2 span {
   position: relative;
   margin-top: 35px;
 }
+#drop-target-one {
+  margin-top: -30px;
+}
