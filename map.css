@@ -227,6 +227,16 @@ h2 span {
 .clearfix:after {
   clear: both; }
 
+#undo {
+  float: center;
+  margin-left: 33%;
+  margin-top: -55px;
+}
+#zoom {
+  float: right;
+  margin-right: 10px;
+}
+
 #zoom1 {
   float: right;
   margin-left: -30px;
@@ -237,6 +247,13 @@ h2 span {
   position: relative;
   margin-top: 35px;
 }
+
 #drop-target-one {
   margin-top: -30px;
+}
+
+#nurse {
+  float: left;
+  margin-left: -150px;
+  margin-top: 15px;
 }

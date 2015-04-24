@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>PICU Map</title>
 
@@ -63,17 +63,21 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter By <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Experience</a></li>
           <li><a href="#">Availability</a></li>
-          <li><a href="#">Last Name</a></li>
-<!--           <li class="divider"></li>
-          <li class="dropdown-header">Nav header</li>
-          <li><a href="#">Separated link</a></li>
-          <li><a href="#">One more separated link</a></li> -->
+          <li><a href="#">Last Name, First Name</a></li>
+          <li><a href="#">First Name, Last Name</a></li>
+          <li><a href="#">ICU All</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Experience ICU</li>
+          <li><a href="#">EMCO</a></li>
+          <li><a href="#">CVVH</a></li>
+          <li><a href="#">CVVH4</a></li>
+          <li><a href="#">Transplant</a></li>
+          <li><a href="#">PD</a></li>
         </ul>
       </li>
       </ul>
-      <a href = "map.html"><button type="button" class="btn btn-default">Undo</button></a>
+      <a href="map.html" class="btn btn-success btn-large" id="undo">Undo Last Assignment</a>
     </div>
 
     <a href="index.html">
@@ -81,6 +85,7 @@
     </a>
     <button type="button" class="btn btn-default btn-sm" id = "zoom1">+</button>
     <button type="button" class="btn btn-default btn-sm" id = "zoom2">-</button>
+    <img src="zoom.png" id="zoom" style="width:20px;height:20px">
 
    <div class="container">
     <div id="dd-elements" class="clearfix">
