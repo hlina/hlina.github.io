@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Look Up Types</title>
+
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="typeSuggestions.css" rel="stylesheet">
+  <link rel="stylesheet" href="leaflet-0.7.3/leaflet.css" />
+  <script src="leaflet-0.7.3/leaflet.js"></script>
+  <script src="leaflet-0.7.3/leaflet-src.js"></script>
+  <script src="assets/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="home.html">Back to Quiz</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+          <div class = "inner cover">
+            <form class = "searchBar">
+            <div id = "app">
+              <input type='text' id='input' placeholder='Search' autofocus>  
+              <p class="lead">
+                <input type = "submit" class="btn btn-lg btn-default" id="submit">
+              </p>
+              <div id='suggestions-list'></div>
+            </div>
+            </form>
+          <!autocomplete-->
+          <script type='text/template' id='item-template'>
+          <% if (suggestions.length) { %>
+            <ul id='suggestions'>
+            <% _.each(suggestions, function(suggestion) { %>
+              <li><%= suggestion %></li>
+              <% }); %>
+            </ul>
+            <% } %>
+            </script>
+          </div>
+
+        <div class="display">
+          <div id="map"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/docs.min.js"></script>
+
+    <script src="lib/js/jquery-1.11.1.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script src="lib/js/bluebird.js"></script>
+
+    <script src="trie.js"></script>
+    <script src="promisifiedAjaxSimple.js"></script>
+    <script src="promisifiedAjax.js"></script>
+    <script src="appView.js"></script>
+    <script src="typeSuggestions.js"></script>
+  </body>
+  </html>
+
+
+  <!DOCTYPE html>
+  <html>
+
+  <body>

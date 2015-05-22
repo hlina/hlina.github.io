@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Myers Briggs Personality Types</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="home.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Myers Briggs Personality Types</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header at the top -->
+    <div class="jumbotron">
+      <div class="container">
+        <a href = "past.html" id = "past">Your Past Results</a>
+        <h1>Which type are you?</h1>
+        <p>Take a quick quiz to find out your Myers Briggs personality as well as learn which countries best fit your personality type.</p>
+        <p id = "types">Analysts: INTJ | INTP | ENTJ | ENTP</p>
+        <p id = "types">Diplomats: INFJ | INFP | ENFJ | ENFP</p>
+        <p id = "types">Sentinels: ISTJ | ISFJ | ESTJ | ESFJ</p>
+        <p id = "types">Explorers: ISTP | ISFP | ESTP | ESFP</p>
+
+        <p><a class="btn btn-primary btn-lg" href="typeSuggestions.html" role="button">Search by Type &raquo;</a></p>
+      </div>
+    </div>
+
+    <!--Questions for the Survey -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Won't Take Long</h2>
+          <p>The quiz is only 20 questions long!</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Be Honest</h2>
+          <p>even if you don't like your own answers.</p>
+       </div>
+        <div class="col-md-4">
+          <h2>Don't Be Neutral</h2>
+          <p>You won't get interesting results if you leave every question as in the middle.</p>
+        </div>
+      </div>
+
+      <form class= "quiz">
+        <div class="question">
+        Question 1: You find it easy to introduce yourself to others<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>
+        <input type="range" class="EI" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 2: A logical decision is always best, even if it hurts someone's feelings<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="TF" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 3: You always try to imagine the full picture before looking at individual facts.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="NS" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 4: You have no difficulties coming up with a personal timetable and sticking to it.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="JP" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 5: You would rather call yourself down-to-earth than a dreamer.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="SN" min="0" max="10">
+        <br>
+      </div>
+
+        <div class="question">
+        Question 6: If the room is full, you stay closer to the walls, avoiding the center.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="IE" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 7: You would rather improvise than spend time coming up with a detailed plan.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="PJ" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 8: Justice is more important than mercy.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="TF" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 9: You often take initiative in social situations.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>     
+        <input type="range" class="EI" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 10: It is difficult for you to hide your feelings.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="FT" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 11: Real things are often more important than ideas.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="SN" min="0" max="10">
+        <br>
+        </div>
+
+        <div id="overlay">
+            <div>
+            <a class="back" href = "home.html">Back</a>
+            <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="question">
+        Question 12: Being able to develop a plan and stick to it is the most important part of every project.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="JP" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 13: Emotional movies can easily make you sad.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="FT" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 14: Your home and work environments are quite tidy.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="JP" min="0" max="10">
+        <br>
+        </div>
+
+                <div class="question">
+        Question 15: You find it difficult to start talking when you do not yet have a clear idea in your mind.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="IE" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 16: You enjoy thinking about what impact current events could have on something far away in the future.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="NS" min="0" max="10">
+        <br>
+        </div>
+
+
+        <div class="question">
+        Question 17: You find it difficult to keep a cool head in conflict situations.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="FT" min="0" max="10">
+        <br>
+        </div>
+
+        <div class="question">
+        Question 18: Deadlines seem to you to be of relative, rather than absolute, importance.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="PJ" min="0" max="10">
+        <br>
+        </div>
+
+                <div class="question">
+        Question 19: The more people with whom you speak, the better you feel.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="IE" min="0" max="10">
+        <br>
+        </div>
+
+                <div class="question">
+        Question 20: As a rule, current preoccupations worry you more than your future plans.<br><br>
+        <ul class = "range">
+          <li id = "disagree">disagree</li>
+          <li id = "agree">agree</li>
+        </ul>      
+        <input type="range" class="SN" min="0" max="10">
+        <br>
+        </div>
+        
+        <div class = "you">
+        Who is taking this quiz? <br>
+        <input type = "radio" id="me" name="identity" value="me" checked> on my computer
+        <input type = "radio" id="other" name="identity" value="other"> on a friend's computer
+        </div>
+
+        <input type = "submit" class = "submit">
+        </form>
+      </div>
+      <footer>
+        <p>&copy; CIS197 F2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="lib/js/underscore.js"></script>
+    <script src="lib/js/backbone.js"></script>
+    <script src="chart.js"></script>
+    <script src="lib/js/jquery-1.11.1.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>
