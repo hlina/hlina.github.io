@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+	<link href="graph.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="citibike.html">Minimizing Costs for CitiBike</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="graphs.html">Graph 1</a></li>
+            <li><a href="graph2.html">Graph 2</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div class="container">
+
+<div id = "graphs"><img src = "graph2-2.png" alt = "Formula"> <br>
+<img src = "graph2.png" alt = "Solution">
+<h1>Linear Program Variables Explained</h1>
+<p>
+Objective function: minimize traveling distances of all delivery trucks <br>
+yij is a cost matrix parameter and Xijv is a binary variable representing whether the arc ij is traveled and thus whether the cost yij is incurred.
+Parameters: <br>
+• dj and pj represent the delivery and pickup request values at station j<br>
+• Q is vehicle capacity, which is 25 bikes <br>
+• yij is the cost of travel between stations i and j <br>
+This is estimated based on the distance matrix, which is in kilometers, and the cost of gas in traveling such a distance in NY (estimated to be about $0.379)<br>
+• V is the total number of vehicles. <br>
+It was decided to use 2 because 2 vehicles can carry in total 50 bikes. There are 10 demand stations which need 5 bikes each. These are arbitrary assumptions that require more research<br>
+• TL is max route for any given vehicle<br>
+This was made infinite for now, but will be researched in depth later.<br>
+Variables:<br>
+• Xijv is a binary variable that represents whether the path between station i and station j is taken for vehicle v.<br>
+• Div number of deliveries yet to be made and Piv represents the cumulative number of bikes picked up at station i on vehicle v<br>
+Constraints Explained:<br>
+8) This constraint makes sure each node is traveled to once (since j is the node the truck arrives at)<br>
+9) This constraint makes sure each vehicle is used at most once and thus leaves the starting station only once. (In our GAMs code, the starting station is station 1.)<br>
+10) This ensures that a vehicle that arrives at a node must depart from that node as well.<br>
+11) This ensures that for every node that the vehicle leaves, the load the vehicle carries is smaller than the vehicle capacity.<br>
+12) This ensures that at the starting node, the total number of bikes yet to be delivered is equal to the total demand at all the stations the vehicle will travel to.<br>
+13) This ensures that at the starting node, there have been 0 pickups.<br>
+14) This ensures that if station j is visited, Dj or number of bikes yet to be delivered at the new station is equal to Di, the number of bikes to be delivered at the last station the vehicle just left from, minus the amount of bikes delivered at station j. This is a non-linear constraint. <br>
+15) This ensures that if station j is visited, Pi, or number of bikes cumulatively that have been picked up, increases by pj, for the new total number of bikes cumulatively picked up at station j. This is also a non-linear constraint.<br>
+16) This is to ensure the maximum route traveled is less than the maximum route for a vehicle, but since this is infinite in our problem, this constraint really isn’t necessary.<br>
+17, 18, 19) These constraints stipulate that Piv and Div are positive variables and Xijv is a binary variable, which are the types that make sense for what they represent.
+</p>
+</div>
+<div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
