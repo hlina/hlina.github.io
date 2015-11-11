@@ -80,7 +80,7 @@ $(document).ready(function(){
       for (i = 0; i < cities.length; i++) {
         var circle = L.circle([latlng[cities[i]][0], latlng[cities[i]][1]], B[i]*multiplier, {
             color: rgb(min, max, B[i]),
-            fillColor: '#f03',
+            fillColor: rgb(min, max, B[i]),
             fillOpacity: 0.5
         }).addTo(map);
         circle.bindPopup("City: " +cities[i]+",\n Influence: "+B[i].toString());
