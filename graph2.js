@@ -124,9 +124,9 @@ $(document).ready(function(){
                 min = maxB;
             }
           }
-          // for (i = 0; i < cities.length; i++) {
-          //       console.log(cities[i] +": "+ B[i]);
-          //  }
+          for (i = 0; i < cities.length; i++) {
+                console.log(cities[i] +": "+ B[i]);
+           }
           var multiplier = 98600.0/max;
           for (i = 0; i < cities.length; i++) {
             var circle = L.circle([latlng[cities[i]][0], latlng[cities[i]][1]], B[i]*multiplier, {
