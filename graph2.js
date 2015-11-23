@@ -75,7 +75,7 @@ $(document).ready(function(){
                   var numerator = parseFloat(P[i+1])/100000.0-parseFloat(P[i])/100000.0*(1-d);
                   var denominator = 1-parseFloat(P[i])/100000.0;
                   var tempB = (1-Math.pow(1-numerator/denominator,1/n))*n;
-                  if (tempB < maxB) {
+                  if (tempB < maxB & tempB > 0) {
                     maxB = tempB;
                   }
                 }
