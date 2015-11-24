@@ -54,9 +54,20 @@ llapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Under Construction</h1>
-        <p class="lead"></p>
+      <div class="starter-template">   
+          <h3>Input a budget amount in dollars:</h3>   
+          <input type="text" id="budget"><br>
+          <h3>Choose a Network of Cities:</h3>
+          <h4>Northeast</h4>
+          <INPUT TYPE="radio" NAME="smallModel" ID="1" >Baltimore, Boston, New York, Philadelphia, Pittsburgh, Richmond, Washington<br>
+          <h4>South</h4>          
+          <INPUT TYPE="radio" NAME="smallModel" ID="2" >Austin.Birmingham,Charlotte,Denver,Nashville<br>
+          <h4>West</h4>
+          <INPUT TYPE="radio" NAME="smallModel" ID="3" >Las Vegas,Los Angeles,Salt Lake City,San Francisco,Seattle<br>
+          <button id="submit">Submit</button>
+          <br><br>
+          <div class = "results"> </div><br>
+          <div class = "cityGraphs"></div>
       </div>
 
     </div><!-- /.container -->
@@ -69,5 +80,7 @@ llapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="graph4.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
   </body>
 </html>
