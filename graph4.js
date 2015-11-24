@@ -53,7 +53,7 @@ function showChart() {
 	var data = {
       labels: dates,
       datasets: 
-      {
+      [{
         label: city+" Before",
         fillColor: fill,
         strokeColor: color,
@@ -72,7 +72,7 @@ function showChart() {
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(151,187,205, 1)",
         data: dataFuture[city]
-      };
+      }]
     };
     var options = {
       legendTemplate: '<ul id = \"legend\"> <li><div class=\"box\" style=\"background-color:#FFF>\"></div>LEGEND</li>'
