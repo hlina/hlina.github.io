@@ -170,7 +170,7 @@ function showGraphs() {
 		tableResults += cityNames[i]+": $" + cost.toFixed(2)+ " for improved recovery rate of " + d_opt+"<br>";
 	}
 	tableResults += "</p>";
-	var dropDown = "<h4>Graph the improvements for a given city</h4><select id = \"cities\">";
+	var dropDown = "<h4>Graph the improvements for a given city</h4><p>Chart shows population infected out of 100,000 across time.</p><select id = \"cities\">";
 	for (i = 0; i < cityNames.length; i++) {
 		dropDown += "<option value = '"+cityNames[i]+"'>"+cityNames[i]+"</option>"
 	}
