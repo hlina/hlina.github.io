@@ -154,7 +154,7 @@ $(document).ready(function(){
 		for (i = 0; i < cityNames.length; i++) {
 			var cost = costs[year][i];
 			var d_opt = 1-deltas[year][i];
-			tableResults += cityNames[i]+": $" + abs(cost.toFixed(2))+ " for improved recovery rate of " + d_opt+"<br>";
+			tableResults += cityNames[i]+": $" + Math.abs(cost.toFixed(2))+ " for improved recovery rate of " + d_opt+"<br>";
 		}
 		tableResults += "</p>";
 		var dropDown = "<h4>Graph the improvements for a given city</h4><p>Chart shows population infected out of 100,000 across time.</p><select id = \"cities\">";
