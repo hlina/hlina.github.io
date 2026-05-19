@@ -1,85 +1,573 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Data Science Mentor — Ella Labs LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --bg-card: #ffffff;
+    --text: #1f1d1a;
+    --text-soft: #4a4742;
+    --muted: #8a857c;
+    --border: #ebe6dc;
+    --border-soft: #f1ede4;
+    --accent: #6b7a5a;
+    --accent-soft: #e8ebe1;
+    --gold: #b8956a;
+  }
 
-    <title>Patient Charge Cards</title>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-    <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(184, 149, 106, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 85% 92%, rgba(107, 122, 90, 0.05) 0%, transparent 45%);
+    background-attachment: fixed;
+  }
 
-    <!-- Custom styles for this template -->
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  /* Header */
+  header {
+    padding: 100px 24px 56px;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+  }
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    color: var(--gold);
+  }
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+  .ornament-line {
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
 
-  <body>
+  .ornament-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="map.html">PICU Map</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Red Team</a></li>
-            <li><a href="#">Green Team</a></li>
-            <li><a href="#">Purple Team</a></li>
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-style: italic;
+  }
+
+  .sublabel {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 12px 0 0;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .tagline {
+    color: var(--text-soft);
+    margin: 28px auto 56px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  nav.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: var(--bg-card);
+    padding: 6px;
+    border-radius: 999px;
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(31, 29, 26, 0.04);
+  }
+
+  .tab-btn {
+    background: transparent;
+    color: var(--muted);
+    border: none;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .tab-btn:hover { color: var(--text); }
+
+  .tab-btn.active {
+    color: var(--bg-card);
+    background: var(--text);
+  }
+
+  /* Main */
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Service cards */
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 44px 48px;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--accent) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover {
+    border-color: #d9d2c2;
+    box-shadow: 0 8px 28px rgba(31, 29, 26, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .service-number {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .service-card h3 {
+    margin: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--text);
+  }
+
+  .service-card ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 32px;
+  }
+
+  .service-card > ul > li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    color: var(--text-soft);
+    line-height: 1.65;
+  }
+
+  .service-card > ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent);
+  }
+
+  .service-card li ul {
+    margin: 10px 0 6px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .service-card li ul li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .service-card li ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 6px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .service-card a {
+    color: var(--text);
+    text-decoration: none;
+    background-image: linear-gradient(transparent 96%, var(--gold) 96%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+    padding-bottom: 1px;
+  }
+
+  .service-card a:hover {
+    color: var(--gold);
+  }
+
+  .inquire-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text);
+    color: var(--bg) !important;
+    padding: 0 48px;
+    height: 48px;
+    min-width: 180px;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1;
+    border: 1px solid var(--text);
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.04em;
+    background-image: none !important;
+    text-align: center;
+    text-indent: 0.04em;
+  }
+
+  .inquire-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(184, 149, 106, 0.3);
+  }
+
+  /* About */
+  .about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 56px 56px;
+    position: relative;
+  }
+
+  .about-card::before {
+    content: '"';
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.18;
+    line-height: 1;
+    font-style: italic;
+  }
+
+  .about-card .about-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-card p {
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-soft);
+    margin: 0 0 22px;
+  }
+
+  .about-card p:last-child { margin-bottom: 0; }
+
+  .about-card p:first-of-type {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .about-card a {
+    color: var(--text);
+    text-decoration: none;
+    background-image: linear-gradient(transparent 94%, var(--gold) 94%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    padding-bottom: 1px;
+  }
+
+  .about-card a:hover { color: var(--gold); }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 48px 24px 56px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    border-top: 1px solid var(--border-soft);
+    margin: 40px 24px 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer .footer-brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  footer a:hover { color: var(--gold); }
+
+  footer .dot {
+    color: var(--border);
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 64px 24px 40px; }
+    main { padding: 32px 16px 64px; }
+    .service-card { padding: 32px 28px; }
+    .about-card { padding: 40px 28px; }
+    .about-card::before { left: 18px; top: 16px; font-size: 3.5rem; }
+    .about-card p:first-of-type { font-size: 1.15rem; }
+    .service-card h3 { font-size: 1.4rem; }
+    .tagline { margin: 24px auto 40px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="ornament" aria-hidden="true">
+    <span class="ornament-line"></span>
+    <span class="ornament-dot"></span>
+    <span class="ornament-line"></span>
+  </div>
+  <h1 class="brand">Your Data Science Mentor</h1>
+  <p class="sublabel">Ella Labs LLC</p>
+  <p class="tagline">AI consulting that turns recurring work into elegant, automated workflows.</p>
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="services" role="tab" aria-selected="true">Services</button>
+    <button class="tab-btn" data-tab="about" role="tab" aria-selected="false">About Us</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- SERVICES -->
+  <section id="services" class="tab-panel active" role="tabpanel">
+
+    <!-- 1 -->
+    <article class="service-card">
+      <div class="service-header">
+        <h3>Intro to AI Workshop</h3>
+      </div>
+      <ul>
+        <li>Build your first agent.</li>
+        <li>Build AI workflows with Make through Claude to automate any recurring tasks.</li>
+        <li>Download Claude Code to build a skill or plugin that automates your most-done task.</li>
+        <li>Build a slide deck with Gamma.</li>
+        <li>Connect Google Calendar/email to Claude with MCP to automate scheduling and email responses.</li>
+      </ul>
+      <a class="inquire-btn" href="mailto:yourdatasciencementors@gmail.com?subject=Inquiry%3A%20Intro%20to%20AI%20Workshop">Inquire</a>
+    </article>
+
+    <!-- 2 -->
+    <article class="service-card">
+      <div class="service-header">
+        <h3>Data Science with AI — Training or Consulting</h3>
+      </div>
+      <ul>
+        <li>
+          Run a Data Science training workshop leveraging these classes:
+          <ul>
+            <li><a href="https://yourdatasciencementor.wordpress.com/2026/02/11/bundle-data-driven-product-strategy-and-11-case-studies/" target="_blank" rel="noopener">Data-Driven Product Strategy + 11 Case Studies</a></li>
+            <li><a href="https://yourdatasciencementor.wordpress.com/2025/11/29/bundle-experimentation-course-and-12-case-studies/" target="_blank" rel="noopener">Experimentation Course + 12 Case Studies</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+        </li>
+        <li>
+          Conduct a State of the Union analysis with Claude on business gaps seen in data today:
+          <ul>
+            <li>Growth funnel analysis — how have new users grown, come back, retained, and increased in depth?</li>
+            <li>Retention Analysis — when people use your product, what gets them to come back?</li>
+            <li>Failure Analysis — when people try to use your product and fail, what happened?</li>
+            <li>Power User Analysis — who are the power users, and how much usage are they responsible for?</li>
+            <li>Customer Segmentation — what are the kinds of ways users use your product?</li>
+          </ul>
+        </li>
+        <li>Create a dashboard of key metrics.</li>
+        <li>Automate dashboard reporting with a Claude AI skill.</li>
+      </ul>
+      <a class="inquire-btn" href="mailto:yourdatasciencementors@gmail.com?subject=Inquiry%3A%20Data%20Science%20with%20AI">Inquire</a>
+    </article>
 
-    <!-- Begin page content -->
-    <div class="container">
-      <div class="page-header">
-      <a href="#" class="btn btn-success btn-large" id="unassign">Unassign Nurse</a>
+    <!-- 3 -->
+    <article class="service-card">
+      <div class="service-header">
+        <h3>Administration Automation</h3>
       </div>
-      <img src="ChargeCard.jpg" style="width:900px;height:550px" id="card">
-      <button type="button" class="btn btn-default" aria-label="Left Arrow" id = "left">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </button>
-      <button type="button" class="btn btn-default" aria-label="Right Arrow" id = "right">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      </button>
+      <ul>
+        <li>Automate email and marketing campaign A/B testing and creation.</li>
+        <li>Automate calendar management and scheduling.</li>
+      </ul>
+      <a class="inquire-btn" href="mailto:yourdatasciencementors@gmail.com?subject=Inquiry%3A%20Administration%20Automation">Inquire</a>
+    </article>
+
+    <!-- 4 -->
+    <article class="service-card">
+      <div class="service-header">
+        <h3>Website Development</h3>
+      </div>
+      <ul>
+        <li>Redo your website with AI for cheaper than what you're currently paying your website providers — guaranteed.</li>
+        <li>
+          See examples of what can be done through our already vibe-coded websites:
+          <ul>
+            <li><a href="https://www.instagram.com/p/DYaM0G3NNux/" target="_blank" rel="noopener">Demo video 1</a></li>
+            <li><a href="https://www.instagram.com/p/DYVdflFyJT7/" target="_blank" rel="noopener">Demo video 2</a></li>
+            <li><a href="https://www.instagram.com/p/DWxEWq6Eq4F/" target="_blank" rel="noopener">Demo video 3</a></li>
+            <li><a href="https://www.instagram.com/p/DXsPHzEEWoD/" target="_blank" rel="noopener">Demo video 4</a></li>
+            <li><a href="https://www.list-to-table.com/" target="_blank" rel="noopener">Website 1</a></li>
+            <li><a href="https://linakuophotography.github.io/" target="_blank" rel="noopener">Website 2</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="inquire-btn" href="mailto:yourdatasciencementors@gmail.com?subject=Inquiry%3A%20Website%20Development">Inquire</a>
+    </article>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="tab-panel" role="tabpanel">
+    <div class="about-card">
+      <div class="about-content">
+        <p>
+          Hi! We are <a href="https://www.linkedin.com/in/ariena-chi/" target="_blank" rel="noopener">Ariena</a> and
+          <a href="https://www.linkedin.com/in/lina-huang18/" target="_blank" rel="noopener">Lina</a>.
+        </p>
+        <p>
+          We are staff and manager-level data scientists, and each have 7+ years of experience working at tech companies such as Meta, LinkedIn, and Chan Zuckerberg Initiative.
+        </p>
+        <p>
+          We have been using AI a lot at work and see a major gap in what people and businesses use it for. We want to help bridge that gap.
+        </p>
+        <p>
+          Check out our <a href="#" onclick="document.querySelector('[data-tab=services]').click(); return false;">services page</a> for what we offer, as well as our Instagram
+          <a href="https://www.instagram.com/yourdatasciencementor/" target="_blank" rel="noopener">@yourdatasciencementor</a>
+          for some videos on what we know how to do.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Links To Different Patient Rooms Would Go Here</p>
-      </div>
-    </footer>
+</main>
 
+<footer>
+  <div class="footer-brand">Ella Labs LLC</div>
+  <div class="footer-links">
+    <a href="mailto:yourdatasciencementors@gmail.com">yourdatasciencementors@gmail.com</a>
+    <span class="dot">·</span>
+    <a href="https://www.instagram.com/yourdatasciencementor/" target="_blank" rel="noopener">@yourdatasciencementor</a>
+  </div>
+</footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => {
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      panels.forEach(p => p.classList.toggle('active', p.id === target));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
 </html>
