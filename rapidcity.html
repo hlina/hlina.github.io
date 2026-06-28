@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid City Trip — Oct 2026</title>
+<style>
+  :root{
+    color-scheme:light;
+    --ink:#1f2933; --muted:#6b7280; --line:#e5e7eb;
+    --sky:#2f6f9f; --sky-d:#1f4e6e; --sand:#c98a3b; --pine:#3c7a5a;
+    --bg:#f7f6f2; --card:#ffffff; --accent:#b3472d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 60px}
+  header.hero{background:linear-gradient(135deg,var(--sky-d),var(--sky));color:#fff;
+    padding:42px 20px 36px;text-align:center}
+  header.hero h1{margin:0 0 6px;font-size:30px;letter-spacing:.3px}
+  header.hero p{margin:2px 0;opacity:.92}
+  .pills{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:5px 12px;border-radius:999px;font-size:13px}
+  .status{display:inline-block;margin-top:16px;background:#fff3cd;color:#7a5a00;
+    border:1px solid #ffe28a;padding:6px 14px;border-radius:8px;font-size:13.5px;font-weight:600}
+  h2.section{font-size:20px;margin:34px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--line);
+    display:flex;align-items:center;gap:9px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}}
+  .label{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700}
+  .big{font-size:17px;font-weight:700;margin:3px 0}
+  .rec{border-left:4px solid var(--pine)}
+  .alt{border-left:4px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+  .best{background:#eef6f0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px}
+  .tag.green{background:#e3f3e9;color:#216c43}
+  .tag.amber{background:#fdf0d5;color:#8a5a00}
+  .tag.blue{background:#e4eff7;color:#1f4e6e}
+  .tag.yellow{background:#ffe25a;color:#5c4600}
+  /* timeline */
+  .day{display:flex;gap:16px;margin:0 0 6px}
+  .daynum{flex:0 0 56px;text-align:center}
+  .daynum .n{background:var(--sky);color:#fff;border-radius:10px;font-weight:800;padding:8px 0;font-size:15px}
+  .daynum .dow{font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+  .dline{flex:1;border-left:2px dashed var(--line);padding:0 0 22px 18px;margin-left:-9px}
+  .dtitle{font-weight:700;font-size:15.5px;margin-bottom:4px}
+  .dline ul{margin:6px 0 0;padding-left:18px}
+  .dline li{margin:3px 0}
+  .seasonal{font-size:12.5px;color:var(--accent);font-style:italic;margin-top:4px}
+  .budget-row{display:flex;align-items:center;gap:12px;margin:8px 0}
+  .budget-row .bl{flex:0 0 200px;font-size:14px}
+  .bar{flex:1;background:#eee;border-radius:6px;height:18px;overflow:hidden}
+  .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--sky-d))}
+  .budget-row .bv{flex:0 0 90px;text-align:right;font-weight:700;font-size:14px}
+  .note{font-size:13px;color:var(--muted)}
+  ul.check{list-style:none;padding:0;margin:0}
+  ul.check li{padding:5px 0 5px 28px;position:relative;cursor:pointer;user-select:none}
+  ul.check li:before{content:"☐";position:absolute;left:4px;font-size:16px;color:var(--sky)}
+  ul.check li.done:before{content:"☑";color:var(--pine)}
+  ul.check li.done{color:var(--muted);text-decoration:line-through}
+  .reset-btn{display:inline-block;margin:6px 0 0;font-size:12px;color:var(--sky-d);background:none;border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer}
+  a{color:var(--sky-d)}
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>🏔️ Rapid City &amp; the Black Hills</h1>
+  <p><strong>Friday Oct 10 – Friday Oct 17, 2026</strong> · 7 nights</p>
+  <p>Mount Rushmore · Badlands · Custer State Park</p>
+  <div class="pills">
+    <span class="pill">👨‍👩‍👧 Group of 8</span>
+    <span class="pill">🧒 Two 2-year-olds</span>
+    <span class="pill">👵 Grandparents</span>
+    <span class="pill">🤰 3rd-trimester traveler</span>
+    <span class="pill">🏠 Airbnb booked</span>
+  </div>
+  <div class="status">⚠️ Draft plan — nothing is booked yet. Confirm and I'll proceed.</div>
+</header>
+
+<div class="wrap">
+
+  <h2 class="section">✈️ Flights <span class="note" style="font-weight:400;font-size:13px">(your family of 3 — you'll book via Google Flights)</span></h2>
+  <div class="card rec">
+    <span class="tag yellow">RECOMMENDED · FLY FROM SFO</span>
+    <p class="note" style="margin-top:8px">SFO is ~$700 cheaper than SJC for 3 and routes better. No nonstops exist — all connect in Denver on United.</p>
+    <div class="grid2">
+      <div>
+        <div class="label">Outbound · Fri Oct 10</div>
+        <div class="big">SFO 6:15 AM → RAP 12:26 PM</div>
+        <div class="note">United via DEN · 5h 11m · 1h 13m layover. Arrives midday for a gentle first afternoon.</div>
+      </div>
+      <div>
+        <div class="label">Return · Fri Oct 17 — chosen</div>
+        <div class="big">RAP 11:17 AM → SFO 5:23 PM</div>
+        <div class="note">United via DEN · 7h 6m (longer DEN layover ~3h). You picked this one — currently the cheaper return.</div>
+      </div>
+    </div>
+    <p class="note" style="margin-bottom:0">💡 <strong>Skip Basic Economy.</strong> Pick United <strong>Main Cabin</strong> so you can sit with Isabella and bring a carry-on (~$1,150–1,400 total for 3 vs. ~$955 basic). Add United #WT438155 and KTN (Lina TT11FVGT8 / Eric TT11J9Z2F).</p>
+  </div>
+
+  <h2 class="section">🚗 Rental cars</h2>
+  <div class="card rec">
+    <span class="tag green">BOTH CARS BOOKED ✓</span>
+    <div class="big" style="margin-top:8px">🚐 Hertz Minivan — Chrysler Pacifica (7 seats · 5 bags)</div>
+    <div class="note">RAP · Oct 10 12:00 PM → Oct 17 12:00 PM · <strong>$458.44</strong> · CDP 2052200 (META LEISURE, −10%) · pay later / free cancellation.<br>
+    <strong>Confirmation: L6334366567</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgFnzFPXlLhFlwDVVcKmgZMM">View email →</a></div>
+    <div class="big" style="margin-top:14px">🚗 Hertz Large Sedan — Nissan Altima (5 seats · 4 bags)</div>
+    <div class="note">2nd car for the 8th seat + luggage · <strong>$281</strong> (includes one free day) · CDP 2052200.<br>
+    <strong>Confirmation: L6334756931</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgFnzFPXlLhFlwDVVcKmgZMM">View email →</a><br>
+    <em>Switched from Avis (was $841 live) → saved ~$560.</em></div>
+    <div class="note" style="margin-top:8px"><strong>Two cars: $739.44 total</strong> for the week (÷3 families ≈ $246 each).</div>
+  </div>
+  <div class="card">
+    <p style="margin-top:0"><strong>Quote comparison (for reference) —</strong> no company at Rapid City had an 8-seat <em>minivan</em>; Hertz's 7-seat Pacifica was the best value. <strong>Key finding:</strong> no company at Rapid City has an 8-seat <em>minivan</em> for these dates. <strong>Hertz</strong> has the only minivan (a 7-seat Pacifica) — and it's the best value. The only true 8-seater anywhere is National's Premium SUV. All rates below are live with your codes applied:</p>
+    <table>
+      <tr><th>Supplier / code</th><th>Vehicle</th><th>Seats · bags</th><th>Week total</th><th></th></tr>
+      <tr class="best"><td><strong>Hertz</strong> · CDP 2052200</td><td>Minivan — Chrysler Pacifica</td><td>7 · 5</td><td><strong>$458</strong></td><td><span class="tag green">only minivan · best value</span></td></tr>
+      <tr><td>Hertz · CDP 2052200</td><td>Large SUV — Ford Expedition (2WD or 4WD)</td><td>7 · 4</td><td>$643</td><td></td></tr>
+      <tr><td>Hertz · CDP 2052200</td><td>Midsize SUV — Nissan Rogue</td><td>5 · 4</td><td>$436</td><td></td></tr>
+      <tr><td><strong>National</strong> · XZ23956</td><td>Premium SUV — Expedition Max / Wagoneer L</td><td>8 · 7</td><td>$3,573</td><td><span class="tag blue">only true 8-seater</span></td></tr>
+      <tr><td><strong>Avis</strong> · X196290</td><td>Ford Explorer (largest they have)</td><td>6 · 4</td><td>$435</td><td><span class="tag amber">no van</span></td></tr>
+      <tr><td>Avis · X196290</td><td>Full-size / Intermediate sedan</td><td>5 · 2</td><td>$245 / $235</td><td></td></tr>
+    </table>
+    <p class="note">Pulled live in your browser via guest checkout; codes verified (Hertz "META LEISURE" −10%, National contract "Facebook – personal use"). Hertz prices now confirmed — earlier ~$1,950 estimate was way high.</p>
+    <p style="margin-bottom:0">💡 <strong>Recommended for 8 people:</strong><br>
+    <strong>(A) Best value — Hertz Pacifica minivan (7) + 1 small car:</strong> $458 + ~$235 Avis sedan ≈ <strong>$700/week</strong>, seats 12, two drivers.<br>
+    <strong>(B) One vehicle, everyone together:</strong> National 8-seat Premium SUV, <strong>$3,573/week</strong> — simplest but 5× the cost.<br>
+    Since one 7-seat minivan can't legally hold all 8, you'll need a second small car either way. The Hertz minivan + sedan combo is the clear winner.</p>
+  </div>
+
+  <h2 class="section">🏠 Lodging</h2>
+  <div class="card rec">
+    <span class="tag green">BOOKED</span>
+    <div class="big" style="margin-top:8px">Airbnb — whole group (Oct 10–17)</div>
+    <div class="note">Total <strong>$2,094</strong> split across the 3 families (~$698 each). <a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMZN53Q3E2">View reservation →</a></div>
+  </div>
+
+  <h2 class="section">📍 Near your Airbnb <span class="note" style="font-weight:400;font-size:13px">(707 Odde Place, Rapid City 57701)</span></h2>
+  <div class="grid2">
+    <div class="card">
+      <div class="label">Toddler parks &amp; play</div>
+      <ul>
+        <li><strong>Sioux Park / Canyon Lake Park</strong> — big playground, duck pond, flat paths (~15 min)</li>
+        <li><strong>Jump N Slide Adventure Park</strong> (840 E Centre St) — indoor; "Toddler Time" Wed 10am–12pm, $8.95 (~8 min)</li>
+        <li><strong>Storybook Island</strong> — free themed play park (~12 min; verify October hours)</li>
+        <li><strong>Run Wild</strong> (Summerset) — indoor, enclosed infant/toddler area (~20 min)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Groceries &amp; supplies</div>
+      <ul>
+        <li>⚠️ <strong>No Costco in Rapid City</strong> (none in the area). Closest warehouse club is Sam's Club.</li>
+        <li><strong>Sam's Club</strong> (925 Eglin St) — bulk groceries/fuel (~7 min)</li>
+        <li><strong>Walmart Supercenter</strong> (1200 N Lacrosse St) — groceries + toddler supplies (~8 min)</li>
+        <li><strong>Safeway / Family Fare</strong> — full grocery for the week (~7–10 min)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section">🗺️ Day-by-day <span class="note" style="font-weight:400;font-size:13px">(relaxed · drive-up sights · naps protected)</span></h2>
+
+  <div class="day"><div class="daynum"><div class="n">1</div><div class="dow">Fri 10</div></div>
+    <div class="dline"><div class="dtitle">Arrive &amp; settle</div>
+      <ul><li>Land RAP 12:26 PM, pick up vehicle(s), lunch.</li>
+      <li><strong>Grocery run for the week</strong> — Sam's Club (925 Eglin St, ~7 min) or Walmart/Safeway; stock the Airbnb with breakfast, snacks, toddler food &amp; water.</li>
+      <li>Check into Airbnb, unpack, rest.</li>
+      <li>Easy outing: <a href="https://www.storybookisland.org/"><strong>Storybook Island</strong></a> (free 8-acre themed toddler park, ~12 min — one of Rapid City's top family spots) or downtown <strong>City of Presidents</strong> stroll (~8 min, life-size president statues on the sidewalks).</li>
+      <li>Dinner: <strong>Tally's Silver Spoon</strong>.</li></ul>
+      <div class="seasonal">⚠ Storybook Island often closes for the season ~mid-Oct — verify hours.</div>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">2</div><div class="dow">Sat 11</div></div>
+    <div class="dline"><div class="dtitle">Mount Rushmore</div>
+      <ul><li><a href="https://www.nps.gov/moru/"><strong>Mount Rushmore National Memorial</strong></a> (~40 min from the Airbnb) — the region's #1 draw, ~2 million visitors/year. Arrive early to beat crowds.</li>
+      <li><strong>Presidential Trail</strong>: 0.6-mi loop with ~422 stairs — best views up close, but use a baby carrier (not stroller-friendly). Junior Ranger booklet for the kids; ice cream at Carver's Café (Jefferson's vanilla recipe).</li>
+      <li>Afternoon: naps, or optional <a href="https://crazyhorsememorial.org/"><strong>Crazy Horse Memorial</strong></a> (~25 min from Rushmore) — the world's largest mountain carving, still in progress.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">3</div><div class="dow">Sun 12</div></div>
+    <div class="dline"><div class="dtitle">Wildlife — low effort, big payoff</div>
+      <ul><li><a href="https://www.bearcountryusa.com/"><strong>Bear Country USA</strong></a> (~20 min from the Airbnb) — ~3-mile drive-through park with black bears, wolves, elk &amp; bison; everyone stays in the car. One of the area's most-loved family stops. 👌 toddlers + pregnancy.</li>
+      <li><a href="https://www.reptilegardens.com/"><strong>Reptile Gardens</strong></a> (~5 min further) — Guinness World Record holder for the world's largest reptile zoo; mostly indoor, easy 1–2 hr visit.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">4</div><div class="dow">Mon 13</div></div>
+    <div class="dline"><div class="dtitle">Custer State Park — scenic drive</div>
+      <ul><li><a href="https://gfp.sd.gov/parks/detail/custer-state-park/"><strong>Custer State Park — Wildlife Loop Road</strong></a> (~55 min from the Airbnb) — an 18-mile scenic loop through a ~1,300-head bison herd, "begging burros," and prairie dogs, all from the car.</li>
+      <li>Optional flat stroll at <strong>Sylvan Lake</strong> — the park's "crown jewel"; the Shoreline Trail is an easy ~1.1-mile loop. Turn back early if the kids fade.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">5</div><div class="dow">Tue 14</div></div>
+    <div class="dline"><div class="dtitle">Badlands National Park</div>
+      <ul><li><a href="https://www.nps.gov/badl/"><strong>Badlands National Park — Loop Road (SD-240)</strong></a> (~60 min from the Airbnb) — ~30 miles of dramatic overlooks right off the road, minimal walking.</li>
+      <li>Toddler-friendly short walks: <strong>Door Trail</strong> (0.75 mi boardwalk), <strong>Window Trail</strong> (0.25 mi), <strong>Fossil Exhibit Trail</strong> (0.25 mi paved). Skip the Notch Trail (log ladder). Junior Ranger badge at the Ben Reifel Visitor Center.</li>
+      <li>Lunch &amp; kitsch at <a href="https://www.walldrug.com/"><strong>Wall Drug</strong></a> (~10 min from the park) — a roadside icon since 1931, famous for donuts &amp; 5¢ coffee.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">6</div><div class="dow">Wed 15</div></div>
+    <div class="dline"><div class="dtitle">Rest / indoor flex day</div>
+      <ul><li>Slow morning. Pick one (all ~8–12 min from the Airbnb): <a href="https://www.journeymuseum.org/"><strong>Journey Museum</strong></a> (indoor — Native American history &amp; geology), <a href="https://www.watikiwaterpark.com/"><strong>WaTiki Indoor Waterpark</strong></a> (largest indoor waterpark in the Dakotas — toddler zone + lazy river), or <a href="https://www.visitrapidcity.com/things-to-do/attractions/dinosaur-park"><strong>Dinosaur Park</strong></a> (free 1936 hilltop landmark, quick photo stop).</li>
+      <li>Good food: Independent Ale House, Que Pasa, or Firehouse Brewing Co.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">7</div><div class="dow">Thu 16</div></div>
+    <div class="dline"><div class="dtitle">Buffer &amp; pack</div>
+      <ul><li>Repeat a favorite, souvenirs, easy scenic drive.</li>
+      <li>Early dinner, early to bed.</li></ul>
+    </div></div>
+
+  <div class="day"><div class="daynum"><div class="n">8</div><div class="dow">Fri 17</div></div>
+    <div class="dline" style="border-left-style:solid;border-color:var(--sky)"><div class="dtitle">Depart</div>
+      <ul><li>Return vehicle(s) → RAP for your midday flight home.</li></ul>
+    </div></div>
+
+  <h2 class="section">🎟️ Bookable activities</h2>
+  <div class="card">
+    <table>
+      <tr><th>Option</th><th>Price</th><th>Why</th></tr>
+      <tr><td><a href="https://www.viator.com/tours/South-Dakota/Dakotas-Self-Guided-Driving-and-Walking-Audio-Tour-Bundle/d22169-267535P56">Self-guided audio driving tour</a></td><td>~$36</td><td>Plays in your own car — flexible for naps. Best fit.</td></tr>
+      <tr><td><a href="https://www.viator.com/tours/Rapid-City/Mount-Rushmore-Memorial-Shared-Tour-from-Rapid-City-South-Dakota/d22170-5577342P2">Mt Rushmore shared tour</a></td><td>~$164</td><td>If you'd rather not drive one day.</td></tr>
+      <tr><td><a href="https://www.viator.com/tours/Rapid-City/Private-Tour-of-Mount-Rushmore-Crazy-Horse-and-Custer-State-Park/d22170-194016P1">Private Rushmore/Crazy Horse/Custer</a></td><td>~$425+</td><td>Guided &amp; flexible with a driver for the group.</td></tr>
+    </table>
+    <p class="note" style="margin-bottom:0">Park fees: Mount Rushmore parking ~$10/vehicle · Badlands $30/vehicle (7-day pass).</p>
+  </div>
+
+  <h2 class="section">💰 Budget snapshot <span class="note" style="font-weight:400;font-size:13px">(per family — your share)</span></h2>
+  <div class="card">
+    <div class="budget-row"><div class="bl">Airbnb (⅓ of $2,094)</div><div class="bar"><span style="width:54%"></span></div><div class="bv">$698</div></div>
+    <div class="budget-row"><div class="bl">Your flights (Main Cabin ×3)</div><div class="bar"><span style="width:100%"></span></div><div class="bv">~$1,300</div></div>
+    <div class="budget-row"><div class="bl">Checked bags</div><div class="bar"><span style="width:23%"></span></div><div class="bv">~$300</div></div>
+    <div class="budget-row"><div class="bl">Rental cars (⅓ of $739)</div><div class="bar"><span style="width:19%"></span></div><div class="bv">~$246</div></div>
+    <div class="budget-row"><div class="bl">Activities &amp; park fees (⅓)</div><div class="bar"><span style="width:8%"></span></div><div class="bv">~$100</div></div>
+    <div class="budget-row"><div class="bl">Group meals (⅓)</div><div class="bar"><span style="width:31%"></span></div><div class="bv">~$400</div></div>
+    <div class="budget-row"><div class="bl">Misc / gas / souvenirs (⅓)</div><div class="bar"><span style="width:10%"></span></div><div class="bv">~$133</div></div>
+    <div class="budget-row" style="border-top:2px solid var(--line);padding-top:10px;margin-top:6px"><div class="bl"><strong>Your family total (est.)</strong></div><div class="bar"></div><div class="bv"><strong>~$3,177</strong></div></div>
+    <p class="note" style="margin-bottom:0">Shared costs (Airbnb, cars, meals, activities) are split across the 3 families. Flights/bags are your family's own — the other two families book their own flights, so their totals differ only on that line. Full breakdown in the <strong>Spending Tracker</strong>.</p>
+  </div>
+
+  <h2 class="section">✅ Trip-planning to-do <span class="note" style="font-weight:400;font-size:13px">(before you go)</span></h2>
+  <div class="card">
+    <ul class="check">
+      <li>Book family flights — SFO↔RAP, Main Cabin, return 11:17 AM (self-book via Google Flights)</li>
+      <li>Add United #WT438155 + KTN (Lina TT11FVGT8 · Eric TT11J9Z2F) to the booking</li>
+      <li>Reserve rental: Hertz Pacifica minivan (CDP 2052200) + Avis sedan (X196290)</li>
+      <li>Confirm two car seats — bring your own or add to the rental</li>
+      <li>Sister: get OB note clearing 3rd-trimester air travel (her own flights)</li>
+      <li>Coordinate arrival times so all 3 families land near each other</li>
+      <li>Pre-book activity tickets: Bear Country, Reptile Gardens; Badlands/Rushmore pay at gate</li>
+      <li>Make dinner reservations for the group (parties of 8 fill up)</li>
+      <li>Save all confirmations into this folder + the spending tracker</li>
+      <li>Download offline maps — cell service is spotty in Badlands/Custer</li>
+    </ul>
+  </div>
+
+  <h2 class="section">🧳 Packing list <span class="note" style="font-weight:400;font-size:13px">(7 nights · October Black Hills · your family of 3)</span></h2>
+  <div class="grid2">
+    <div class="card">
+      <div class="label">Documents &amp; money</div>
+      <ul class="check">
+        <li>Photo IDs / driver licenses (both adults)</li>
+        <li>Boarding passes + rental & Airbnb confirmations</li>
+        <li>Credit cards + some cash; insurance cards</li>
+        <li>Isabella's insurance/pediatrician info</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Tech &amp; charging</div>
+      <ul class="check">
+        <li>Phones + chargers; car phone mount</li>
+        <li>Portable battery pack</li>
+        <li>Camera; tablet + headphones for the toddler</li>
+        <li>Charging cables, multi-USB car charger</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Adults — clothing (layer up!)</div>
+      <ul class="check">
+        <li>7 tops (mix tees + long-sleeve)</li>
+        <li>Warm mid-layer / fleece ×2 each</li>
+        <li>Insulated jacket or warm coat</li>
+        <li>Jeans / pants ×4; 1 nicer outfit for dinners</li>
+        <li>Pajamas, underwear, 7+ pairs socks</li>
+        <li>Hat, gloves, light scarf (30s at night)</li>
+        <li>Sunglasses + rain shell</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Isabella — clothing</div>
+      <ul class="check">
+        <li>8–9 outfits (kids get messy) + extras</li>
+        <li>Warm jacket, fleece, beanie + mittens</li>
+        <li>Footed pajamas ×3 (cold nights)</li>
+        <li>Plenty of socks; 2 pairs shoes</li>
+        <li>Mittens clip / layers for stroller</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Footwear</div>
+      <ul class="check">
+        <li>Comfortable walking/hiking shoes (adults)</li>
+        <li>Casual sneakers; sandals/slippers for Airbnb</li>
+        <li>Toddler sturdy shoes + a backup pair</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Toddler gear &amp; feeding</div>
+      <ul class="check">
+        <li>Car seat (×1 for Isabella) + travel stroller</li>
+        <li>Carrier/backpack for trails &amp; overlooks</li>
+        <li>Diapers (plenty) + wipes + changing pad</li>
+        <li>Sippy cups, snacks, bibs, small utensils</li>
+        <li>Favorite comfort toy + a few small toys/books</li>
+        <li>Travel high-chair or booster (check Airbnb)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Toiletries</div>
+      <ul class="check">
+        <li>Toothbrushes/paste, deodorant, skincare</li>
+        <li>Shampoo, body wash, brush, hair ties</li>
+        <li>Thick lotion + lip balm (dry climate)</li>
+        <li>Sunscreen (high-altitude sun is strong)</li>
+        <li>Toddler bath items + baby toiletries</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Health &amp; first aid</div>
+      <ul class="check">
+        <li>Prescriptions + daily meds</li>
+        <li>Pain reliever (adult + infant/children's)</li>
+        <li>Band-aids, antiseptic, thermometer</li>
+        <li>Allergy meds, motion-sickness remedy</li>
+        <li>Hand sanitizer + tissues</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Car &amp; road-trip</div>
+      <ul class="check">
+        <li>Reusable water bottles (stay hydrated)</li>
+        <li>Cooler bag + road snacks for the group</li>
+        <li>Trash bags, paper towels, wet wipes</li>
+        <li>Blanket; sunshade for toddler window</li>
+        <li>Binoculars (Custer/Badlands wildlife)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Day bag (outings)</div>
+      <ul class="check">
+        <li>Diapers/wipes/spare outfit for Isabella</li>
+        <li>Snacks + water; hats &amp; sunscreen</li>
+        <li>Layers (weather shifts fast), small first aid</li>
+        <li>Cash for Wall Drug / souvenirs</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="border-left:4px solid var(--sand)">
+    <strong>☁️ October weather note:</strong> Black Hills run ~55–65°F daytime, low 30s at night, with strong high-altitude sun and possible early snow. Pack warm layers, a real jacket, and sun protection — even on cool days.
+  </div>
+
+  <div class="foot">Drafted by your Travel Agent · saved in Travel Agent → Rapid City 2026-10 · nothing booked until you confirm.</div>
+</div>
+<script>
+(function(){
+  var KEY="rapidcity_oct2026_checks";
+  function hash(s){var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0;}return "i"+(h>>>0);}
+  var state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){ state={}; }
+  var items=Array.prototype.slice.call(document.querySelectorAll("ul.check li"));
+  items.forEach(function(li){
+    var id=hash((li.textContent||"").trim());
+    li.dataset.k=id;
+    if(state[id]) li.classList.add("done");
+    li.addEventListener("click",function(){
+      li.classList.toggle("done");
+      state[id]=li.classList.contains("done");
+      try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+    });
+  });
+  var foot=document.querySelector(".foot");
+  if(foot){
+    var wrap=document.createElement("div");
+    wrap.style.textAlign="center";
+    var b=document.createElement("button");
+    b.className="reset-btn";
+    b.textContent="Reset all checkboxes";
+    b.addEventListener("click",function(){
+      try{ localStorage.removeItem(KEY); }catch(e){}
+      state={};
+      items.forEach(function(li){ li.classList.remove("done"); });
+    });
+    wrap.appendChild(b);
+    foot.parentNode.insertBefore(wrap,foot);
+  }
+})();
+</script>
+</body>
+</html>
