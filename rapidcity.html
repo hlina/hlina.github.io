@@ -71,6 +71,12 @@
   #gate input{padding:11px 14px;border-radius:8px;border:none;font-size:16px;width:260px;max-width:80vw;text-align:center}
   #gate button{padding:10px 22px;border-radius:8px;border:none;background:var(--sand);color:#fff;font-weight:700;cursor:pointer;font-size:15px}
   #gate .err{color:#ffd5cc;font-size:13px;min-height:18px}
+  #editbar{position:fixed;right:16px;bottom:16px;z-index:5000;display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);box-shadow:0 3px 14px rgba(0,0,0,.18);border-radius:12px;padding:8px 12px;font-size:13px}
+  #editbar button{border:none;background:var(--sky-d);color:#fff;border-radius:8px;padding:7px 13px;font-weight:700;cursor:pointer;font-size:13px}
+  #editbar button.ghost{background:none;color:var(--muted);border:1px solid var(--line)}
+  #editbar .ed{font-weight:700;color:var(--accent);margin-right:4px}
+  [contenteditable="true"]{outline:2px dashed var(--sand);outline-offset:3px;border-radius:4px}
+  body.editing ul.check li{cursor:text}
   a{color:var(--sky-d)}
   .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px}
 </style>
@@ -136,15 +142,19 @@
 
   <h2 class="section">🚗 Rental cars</h2>
   <div class="card rec">
-    <span class="tag green">BOTH CARS BOOKED ✓</span>
-    <div class="big" style="margin-top:8px">🚐 Hertz Minivan — Chrysler Pacifica (7 seats · 5 bags)</div>
-    <div class="note">RAP · Oct 10 12:00 PM → Oct 17 12:00 PM · <strong>$458.44</strong> · CDP 2052200 (META LEISURE, −10%) · pay later / free cancellation.<br>
-    <strong>Confirmation: L6334366567</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgFnzFPXlLhFlwDVVcKmgZMM">View email →</a></div>
+    <span class="tag green">CARS BOOKED ✓</span>
+    <div class="big" style="margin-top:8px">🚐 Enterprise 8-Passenger Van (seats all 8)</div>
+    <div class="note"><strong>Confirmation: 2097407190</strong> · <strong>$993.46</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgGxBZCpLLzBZPwrwFVJbQKk">View email →</a><br>
+    Pickup: <strong>1254 E North St, Rapid City, SD 57701</strong> — a city branch, <em>not</em> the airport.</div>
+    <div style="border:1px solid var(--pine);border-left:5px solid var(--pine);background:#eef6f0;border-radius:10px;padding:12px 14px;margin:12px 0">
+      <strong style="color:var(--pine)">✓ Pickup plan</strong>
+      <div class="note" style="color:var(--ink);margin-top:4px"><strong>Mom is picking up the van</strong> — her flight lands at <strong>10:00 AM</strong>, so she can reach the branch and collect it before it <strong>closes at 12:00 PM</strong>. <strong>Arrive by 11:30 AM</strong> for the 12 PM reservation. (Eric/Lina's flight lands 12:26 PM, after close, so Mom doing the pickup makes this work.) Still call Enterprise to add her as a driver and ask about an airport-area pickup — see the to-do list.</div>
+    </div>
     <div class="big" style="margin-top:14px">🚗 Hertz Large Sedan — Nissan Altima (5 seats · 4 bags)</div>
-    <div class="note">2nd car for the 8th seat + luggage · <strong>$281</strong> (includes one free day) · CDP 2052200.<br>
-    <strong>Confirmation: L6334756931</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgFnzFPXlLhFlwDVVcKmgZMM">View email →</a><br>
-    <em>Switched from Avis (was $841 live) → saved ~$560.</em></div>
-    <div class="note" style="margin-top:8px"><strong>Two cars: $739.44 total</strong> for the week (÷3 families ≈ $246 each).</div>
+    <div class="note">2nd car for luggage/overflow · airport pickup · <strong>$281</strong> (includes one free day) · CDP 2052200.<br>
+    <strong>Confirmation: L6334756931</strong> · <a href="https://mail.google.com/mail/u/0/#inbox/FMfcgzQgMgFnzFPXlLhFlwDVVcKmgZMM">View email →</a></div>
+    <div class="note" style="margin-top:8px"><strong>Two cars: $1,274.46 total</strong> (Enterprise van $993.46 + Hertz sedan $281) — ÷3 families ≈ $425 each.</div>
+    <div class="note" style="margin-top:4px"><em>Note:</em> the earlier Hertz minivan (L6334366567) was replaced by this Enterprise van — cancel it if still active (it was free cancellation).</div>
   </div>
   <div class="card">
     <p style="margin-top:0"><strong>Quote comparison (for reference) —</strong> no company at Rapid City had an 8-seat <em>minivan</em>; Hertz's 7-seat Pacifica was the best value. <strong>Key finding:</strong> no company at Rapid City has an 8-seat <em>minivan</em> for these dates. <strong>Hertz</strong> has the only minivan (a 7-seat Pacifica) — and it's the best value. The only true 8-seater anywhere is National's Premium SUV. All rates below are live with your codes applied:</p>
@@ -264,11 +274,11 @@
     <div class="budget-row"><div class="bl">Airbnb (⅓ of $2,094)</div><div class="bar"><span style="width:54%"></span></div><div class="bv">$698</div></div>
     <div class="budget-row"><div class="bl">Your flights (Main Cabin ×3)</div><div class="bar"><span style="width:100%"></span></div><div class="bv">~$1,300</div></div>
     <div class="budget-row"><div class="bl">Checked bags</div><div class="bar"><span style="width:23%"></span></div><div class="bv">~$300</div></div>
-    <div class="budget-row"><div class="bl">Rental cars (⅓ of $739)</div><div class="bar"><span style="width:19%"></span></div><div class="bv">~$246</div></div>
+    <div class="budget-row"><div class="bl">Rental cars (⅓ of $1,274)</div><div class="bar"><span style="width:33%"></span></div><div class="bv">~$425</div></div>
     <div class="budget-row"><div class="bl">Activities &amp; park fees (⅓)</div><div class="bar"><span style="width:8%"></span></div><div class="bv">~$100</div></div>
     <div class="budget-row"><div class="bl">Group meals (⅓)</div><div class="bar"><span style="width:31%"></span></div><div class="bv">~$400</div></div>
     <div class="budget-row"><div class="bl">Misc / gas / souvenirs (⅓)</div><div class="bar"><span style="width:10%"></span></div><div class="bv">~$133</div></div>
-    <div class="budget-row" style="border-top:2px solid var(--line);padding-top:10px;margin-top:6px"><div class="bl"><strong>Your family total (est.)</strong></div><div class="bar"></div><div class="bv"><strong>~$3,177</strong></div></div>
+    <div class="budget-row" style="border-top:2px solid var(--line);padding-top:10px;margin-top:6px"><div class="bl"><strong>Your family total (est.)</strong></div><div class="bar"></div><div class="bv"><strong>~$3,356</strong></div></div>
     <p class="note" style="margin-bottom:0">Shared costs (Airbnb, cars, meals, activities) are split across the 3 families. Flights/bags are your family's own — the other two families book their own flights, so their totals differ only on that line. Full breakdown in the <strong>Spending Tracker</strong>.</p>
   </div>
 
@@ -277,7 +287,8 @@
     <ul class="check">
       <li>Book family flights — SFO↔RAP, Main Cabin, return 11:17 AM (self-book via Google Flights)</li>
       <li>Add United #WT438155 + KTN (Lina TT11FVGT8 · Eric TT11J9Z2F) to the booking</li>
-      <li>Reserve rental: Hertz Pacifica minivan (CDP 2052200) + Avis sedan (X196290)</li>
+      <li><strong>Call Enterprise (van, conf 2097407190)</strong> to ask about picking up at / near the airport instead of the 1254 E North St branch</li>
+      <li><strong>Call Enterprise</strong> to add the additional driver (Mom) to the reservation</li>
       <li>Confirm two car seats — bring your own or add to the rental</li>
       <li>Sister: get OB note clearing 3rd-trimester air travel (her own flights)</li>
       <li>Coordinate arrival times so all 3 families land near each other</li>
@@ -407,6 +418,7 @@
     li.dataset.k=id;
     if(state[id]) li.classList.add("done");
     li.addEventListener("click",function(){
+      if(document.body.classList.contains("editing")) return;
       li.classList.toggle("done");
       state[id]=li.classList.contains("done");
       try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
@@ -427,6 +439,48 @@
     wrap.appendChild(b);
     foot.parentNode.insertBefore(wrap,foot);
   }
+})();
+</script>
+<script>
+/* In-page Edit Mode → edit text inline, then download the updated rapidcity.html to commit to git. */
+(function(){
+  var bar=document.createElement('div');
+  bar.id='editbar';
+  document.body.appendChild(bar);
+  function regions(){ return [document.querySelector('header.hero'), document.querySelector('.wrap')].filter(Boolean); }
+  function showView(){
+    bar.innerHTML='';
+    var b=document.createElement('button'); b.textContent='✏️ Edit';
+    b.addEventListener('click', enter); bar.appendChild(b);
+  }
+  function enter(){
+    document.body.classList.add('editing');
+    regions().forEach(function(el){ el.setAttribute('contenteditable','true'); });
+    bar.innerHTML='<span class="ed">Editing</span>';
+    var save=document.createElement('button'); save.textContent='💾 Download HTML';
+    save.addEventListener('click', download); bar.appendChild(save);
+    var done=document.createElement('button'); done.className='ghost'; done.textContent='Done';
+    done.addEventListener('click', exitEdit); bar.appendChild(done);
+  }
+  function exitEdit(){
+    document.body.classList.remove('editing');
+    regions().forEach(function(el){ el.removeAttribute('contenteditable'); });
+    showView();
+  }
+  function download(){
+    var clone=document.documentElement.cloneNode(true);
+    var eb=clone.querySelector('#editbar'); if(eb) eb.remove();
+    Array.prototype.forEach.call(clone.querySelectorAll('[contenteditable]'), function(el){ el.removeAttribute('contenteditable'); });
+    var body=clone.querySelector('body'); if(body) body.classList.remove('editing');
+    var g=clone.querySelector('#gate'); if(g) g.classList.remove('hide');           // re-lock published page
+    Array.prototype.forEach.call(clone.querySelectorAll('ul.check li.done'), function(el){ el.classList.remove('done'); }); // don't bake in personal checks
+    var html='<!DOCTYPE html>\n'+clone.outerHTML;
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download='rapidcity.html';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  showView();
 })();
 </script>
 </body>
